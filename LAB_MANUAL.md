@@ -84,6 +84,13 @@ The ramp or triangle wave generator is an oscillator implemented using an opamp-
 2. Capture integrator output ($V_{RAMP}$) and Schmitt trigger output ($V_{SQR}$).
 3. Measure and record frequency and peak-to-peak amplitude.
 
+#### Hardware Measurement Waveforms
+<p align="center">
+  <img src="assets/images/week1_ramp_square_alice_scope.jpg" alt="Ramp and Square Wave Measurements" width="750"/>
+  <br>
+  <em>Measured ALICE Desktop oscilloscope output: Triangle Ramp (CB-V green, 1 Vpp @ 5 kHz) and Schmitt Trigger square wave (CA-V orange, 0 to 4.5 V).</em>
+</p>
+
 ---
 
 ## Experiment 2: Single Ended-to-Differential Input Converter and PWM Modulator
@@ -116,6 +123,12 @@ $$V_{in\_a-} = -V_{in\_a(ac)} + V_{CM}$$
 2. Capture duty cycles of $V_{PWM\_P}$ and $V_{PWM\_N}$; verify $D_N = 1 - D_P$.
 3. Filter PWM outputs with an RC filter ($f_c \approx 1\text{--}2\text{ kHz}$) to reconstruct and verify the demodulated audio sinusoid.
 
+#### Hardware Implementation & Probing
+| Annotated IC Layout & Pin Routing | Hardware Verification with DMM & ALICE |
+|:---:|:---:|
+| <img src="assets/images/week2_pwm_breadboard_annotated_layout.jpg" width="360"/> | <img src="assets/images/week2_pwm_multimeter_alice_measurement.jpg" width="360"/> |
+| *Breadboard IC placement: MCP6004 and LM339 comparator rail routing.* | *Live measurement of differential PWM outputs and RMS AC voltage.* |
+
 ---
 
 ## Experiment 3: H-Bridge Driver and Integration
@@ -138,6 +151,13 @@ The H-bridge power stage provides high-efficiency power delivery to drive speake
 1. Measure duty cycle and waveform symmetry at $V_{OUT\_P}$ and $V_{OUT\_N}$.
 2. Verify audio reconstruction via passive low-pass filtering.
 3. Conduct acoustic hearing tests across frequencies from $156.25\text{ Hz}$ to $1.25\text{ kHz}$.
+
+#### Hardware Implementation
+<p align="center">
+  <img src="assets/images/week3_hbridge_driver_circuit.jpg" alt="Discrete BJT H-Bridge Stage" width="600"/>
+  <br>
+  <em>Discrete complementary BJT H-Bridge power output stage (2N2222 NPN + 2N2907 PNP) with bulk supply bypass capacitors.</em>
+</p>
 
 ---
 
@@ -164,6 +184,13 @@ $$H(s) = \frac{A_0 \left(\frac{\omega_0}{Q}\right) s}{s^2 + \left(\frac{\omega_0
 1. Apply audio sinusoid ($0.9 \times V_M$) at $156.25\text{ Hz}$ and $625\text{ Hz}$; verify maximum response at respective center frequencies.
 2. Perform frequency sweep from $100\text{ Hz}$ to $1.25\text{ kHz}$ to confirm out-of-band attenuation.
 
+#### Hardware Implementation
+<p align="center">
+  <img src="assets/images/week4_bandpass_filter_breadboard.jpg" alt="Active Bandpass Filter Breadboard" width="600"/>
+  <br>
+  <em>Second-order active RC bandpass filter circuits with MCP6004 and precision film capacitors.</em>
+</p>
+
 ---
 
 ## Experiment 5: Adder Circuit
@@ -185,6 +212,13 @@ $$V_{out\_adder} = (V_{in1} + V_{in2}) \quad \text{referenced around } V_{CM}$$
 1. Apply test tones and verify linear addition without saturation clipping.
 2. Connect BPF-1 and BPF-2 outputs to adder inputs and sweep frequency from $100\text{ Hz}$ to $1\text{ kHz}$.
 
+#### Hardware Implementation
+<p align="center">
+  <img src="assets/images/week5_adder_circuit_probing.jpg" alt="Active Adder Circuit Probing" width="600"/>
+  <br>
+  <em>Active summing mixer stage under node probing with multimeter and oscilloscope clips.</em>
+</p>
+
 ---
 
 ## Experiment 6: Top Level Integration
@@ -204,6 +238,12 @@ Top-level integration interconnects all modules into a complete analog stethosco
                          ▼
                    [Speaker (32Ω)]
 ```
+
+<p align="center">
+  <img src="assets/images/system_integration_adalm1000_speaker.jpg" alt="Complete Top Level System Setup" width="800"/>
+  <br>
+  <em>Complete top-level system integrated on dual breadboards, driven by ADALM1000 module and connected to 32Ω dynamic speaker.</em>
+</p>
 
 ### Critical Integration Guidelines
 1. **Module-by-Module Verification:** Ensure each individual module is verified in LTspice and hardware before interconnecting.
