@@ -1,0 +1,20 @@
+# LTspice simulation raw and backup files
+*.raw
+*.op.raw
+*.fft
+*.net~
+*.asc~
+*.asy~
+
+# Large Media / Video files (Video demonstrations hosted on YouTube)
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# OS / Editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+*.tmp

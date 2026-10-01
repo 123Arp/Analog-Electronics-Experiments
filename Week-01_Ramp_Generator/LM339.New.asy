@@ -1,0 +1,28 @@
+Version 4
+SymbolType BLOCK
+LINE Normal -32 48 -32 -32
+LINE Normal 48 0 -32 48
+LINE Normal -32 -48 -32 -32
+LINE Normal 48 0 -32 -48
+LINE Normal 16 19 16 32
+LINE Normal 16 -19 16 -32
+WINDOW 0 -32 -48 Bottom 2
+WINDOW 3 -32 48 Top 2
+SYMATTR Value LM339
+SYMATTR Prefix X
+SYMATTR ModelFile A:\Electronic LAB\LM339.new.sub
+PIN -32 -16 LEFT 8
+PINATTR PinName +
+PINATTR SpiceOrder 1
+PIN -32 16 LEFT 8
+PINATTR PinName -
+PINATTR SpiceOrder 2
+PIN 16 -32 LEFT 8
+PINATTR PinName V+
+PINATTR SpiceOrder 3
+PIN 16 32 LEFT 8
+PINATTR PinName V-
+PINATTR SpiceOrder 4
+PIN 48 0 LEFT 8
+PINATTR PinName Out
+PINATTR SpiceOrder 5
