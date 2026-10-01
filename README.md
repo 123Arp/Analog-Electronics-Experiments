@@ -4,8 +4,16 @@
 [![IIT Madras](https://img.shields.io/badge/Institution-IIT%20Madras-002147?style=for-the-badge&logo=academia)](https://www.iitm.ac.in)
 [![Simulation](https://img.shields.io/badge/EDA-LTspice-blue?style=for-the-badge)](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html)
 [![Hardware](https://img.shields.io/badge/Hardware-ADALM1000-orange?style=for-the-badge)](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ADALM1000.html)
+[![Lab Manual](https://img.shields.io/badge/Manual-Lab%20Manual%20(PDF)-green?style=for-the-badge)](BS_Analog_Systems_Lab_Manual.pdf)
 
-This repository contains the complete laboratory experiments, circuit schematics, simulation models, and design reports for the **Analog Electronic Systems (AES) Lab** at **IIT Madras**, authored by **Arpit Katiyar**.
+This repository contains the complete laboratory experiments, circuit schematics, simulation models, design reports, and official question manual for the **Analog Electronic Systems (AES) Lab** at **IIT Madras**, authored by **Arpit Katiyar**.
+
+---
+
+## 📖 Official Question & Lab Manual
+
+* 📄 **Original PDF Manual:** [**`BS_Analog_Systems_Lab_Manual.pdf`**](BS_Analog_Systems_Lab_Manual.pdf)
+* 📝 **Web-Readable Lab Guide & Pre-Lab Exercises:** [**`LAB_MANUAL.md`**](LAB_MANUAL.md)
 
 ---
 
@@ -22,32 +30,34 @@ All practical circuit breadboard implementations, waveform measurements, and har
 
 ```text
 .
-├── README.md
-├── .gitignore
-├── LICENSE
+├── README.md                          # Main project overview & index
+├── LAB_MANUAL.md                      # Complete question manual & theory
+├── BS_Analog_Systems_Lab_Manual.pdf   # Official 14-page Lab Manual PDF
+├── .gitignore                         # Git ignore configuration
+├── LICENSE                            # MIT License
 ├── Week-01_Ramp_Generator/
-│   ├── Analog1.asc                   # LTspice schematic (Ramp Generator)
-│   ├── Analog1.log                   # LTspice simulation log
-│   ├── LM339.New.asy                 # Custom symbol for LM339 comparator
-│   └── Analog_Lab_Week_1_Report.docx # Lab report with derivations & results
+│   ├── Analog1.asc                    # LTspice schematic (Ramp Generator)
+│   ├── Analog1.log                    # LTspice simulation log
+│   ├── LM339.New.asy                  # Custom symbol for LM339 comparator
+│   └── Analog_Lab_Week_1_Report.docx  # Lab report with derivations & results
 ├── Week-02_Differential_PWM/
-│   ├── Analog1,2.asc                 # LTspice schematic (Single-to-Diff & PWM)
-│   ├── Analog1,2.log                 # Simulation log
-│   ├── LM339.asy                     # Comparator symbol file
-│   └── Analog_Lab_Week_2_Report.docx # Complete laboratory documentation
+│   ├── Analog1,2.asc                  # LTspice schematic (Single-to-Diff & PWM)
+│   ├── Analog1,2.log                  # Simulation log
+│   ├── LM339.asy                      # Comparator symbol file
+│   └── Analog_Lab_Week_2_Report.docx  # Complete laboratory documentation
 ├── Week-03_H-Bridge_Driver/
-│   ├── Analog3.asc                   # LTspice schematic (H-Bridge Class-D stage)
-│   └── Analog_Lab_Week_3_Report.pdf  # Comprehensive Lab Report
+│   ├── Analog3.asc                    # LTspice schematic (H-Bridge Class-D stage)
+│   └── Analog_Lab_Week_3_Report.pdf   # Comprehensive Lab Report
 ├── Week-04_Bandpass_Filter/
-│   ├── Analog4,5.asc                 # LTspice schematic (Active Bandpass Filter)
-│   └── Analog_Lab_Week_4_Report.pdf  # Lab Report & Frequency Analysis
+│   ├── Analog4,5.asc                  # LTspice schematic (Active Bandpass Filter)
+│   └── Analog_Lab_Week_4_Report.pdf   # Lab Report & Frequency Analysis
 ├── Week-05_Adder_Circuit/
-│   ├── Analog5.asc                   # LTspice schematic (Active Adder / Mixer)
-│   ├── Analog5.net                   # SPICE netlist
-│   └── Analog_Lab_Week_5_Report.pdf  # Final Lab Report
+│   ├── Analog5.asc                    # LTspice schematic (Active Adder / Mixer)
+│   ├── Analog5.net                    # SPICE netlist
+│   └── Analog_Lab_Week_5_Report.pdf   # Final Lab Report
 └── Design-Projects_Amplifiers/
-    ├── Trans-Impedence Amplifier.pdf # Precision TIA design & stability report
-    └── Voltage Amplifier.pdf         # 0-1V to 0-50V High-Voltage Amplifier report
+    ├── Trans-Impedence Amplifier.pdf  # Precision TIA design & stability report
+    └── Voltage Amplifier.pdf          # 0-1V to 0-50V High-Voltage Amplifier report
 ```
 
 ---
@@ -56,6 +66,9 @@ All practical circuit breadboard implementations, waveform measurements, and har
 
 ### [Week 1: Ramp Wave Generator](Week-01_Ramp_Generator/)
 * **Objective:** Design and implement a relaxation-oscillator ramp wave generator using an operational amplifier integrator stage and an LM339 Schmitt trigger comparator.
+* **Formulas:**
+  * Peak-to-peak Amplitude: $V_M = 2\left(\frac{R_2}{R_3}\right) V_{CM}$
+  * Oscillation Frequency: $F_{SW} = \frac{R_3}{4 R_2 R_1 C_1}$
 * **Key Components:** MCP6004 Quad Op-Amp, LM339 Comparator, timing resistor/capacitor network ($R_1 = 25\text{ k}\Omega$, $R_2 = 45\text{ k}\Omega$, $R_3 = 200\text{ k}\Omega$, $C = 10\text{ nF}$, pull-up $4.7\text{ k}\Omega$).
 * **Hardware Setup:** Single-supply operation ($V_{DD} = 5\text{ V}$, $V_{CM} = 2.5\text{ V}$) tested using the ADALM1000 Active Learning Module.
 * **Video Demonstration:** [Experiment 1: Ramp Generator](https://youtube.com/@arpit_iit.madras?si=c5lhNswLiiwFaNUQ)
@@ -64,6 +77,9 @@ All practical circuit breadboard implementations, waveform measurements, and har
 
 ### [Week 2: Single-Ended to Differential Input Converter & PWM Modulator](Week-02_Differential_PWM/)
 * **Objective:** Convert a single-ended analog audio/test signal into balanced differential signals ($V_{in+}$ and $V_{in-}$, 180° out of phase) and compare them with the ramp carrier to produce differential pulse-width modulated (PWM) switching signals (`PWM_P` and `PWM_N`).
+* **Equations:**
+  * $V_{in\_a+} = V_{in\_a(ac)} + V_{CM}$
+  * $V_{in\_a-} = -V_{in\_a(ac)} + V_{CM}$
 * **Key Components:** MCP6004 Op-Amp, dual LM339 comparators, RC demodulation/low-pass filters.
 * **Validation:** Verified both on LTspice transient analysis and on breadboard hardware using ALICE desktop oscilloscope tools.
 * **Video Demonstration:** [Experiment 2: Single Ended-to-Differential Converter and PWM Modulator](https://youtube.com/@arpit_iit.madras?si=c5lhNswLiiwFaNUQ)
@@ -72,22 +88,29 @@ All practical circuit breadboard implementations, waveform measurements, and har
 
 ### [Week 3: H-Bridge Driver and Class-D Integration](Week-03_H-Bridge_Driver/)
 * **Objective:** Build a discrete BJT H-Bridge power output stage driven by differential PWM signals to efficiently drive low-impedance inductive/resistive loads (speakers).
-* **Key Components:** 2N2222 (NPN) and 2N2907 (PNP) BJTs, base drive networks, $16\,\Omega$ load resistor, coupling/filter capacitors.
+* **Key Components:** 2N2222 (NPN) and 2N2907 (PNP) BJTs, base drive networks, $32\,\Omega$ load resistor, coupling/filter capacitors.
 * **Video Demonstration:** [Experiment 3: H-Bridge Driver and Integration](https://youtube.com/@arpit_iit.madras?si=c5lhNswLiiwFaNUQ)
 
 ---
 
 ### [Week 4: Active Bandpass Filter](Week-04_Bandpass_Filter/)
-* **Objective:** Design, simulate, and physically implement an active bandpass filter circuit to isolate specific signal bandwidths while suppressing out-of-band harmonics and noise.
-* **Analysis:** AC frequency sweep (Bode plot), resonant frequency calculation, Q-factor, and gain characterization.
+* **Objective:** Design, simulate, and physically implement two active bandpass filter circuits to isolate specific signal bandwidths ($f_{o1} = 156.25\text{ Hz}$, $f_{o2} = 625\text{ Hz}$, $Q = 10$, Gain $= 1$) while suppressing out-of-band harmonics and noise.
+* **Transfer Function:**
+  $$H(s) = \frac{A_0 \left(\frac{\omega_0}{Q}\right) s}{s^2 + \left(\frac{\omega_0}{Q}\right) s + \omega_0^2}$$
 * **Video Demonstration:** [Experiment 4: Bandpass Filter](https://youtube.com/@arpit_iit.madras?si=c5lhNswLiiwFaNUQ)
 
 ---
 
 ### [Week 5: Active Adder / Audio Mixer Circuit](Week-05_Adder_Circuit/)
-* **Objective:** Design an active inverting/non-inverting summing amplifier to combine multiple audio channels with minimal cross-talk and uniform gain response.
+* **Objective:** Design an active summing amplifier to combine the filtered audio channels ($V_{out\_bpf1}$ and $V_{out\_bpf2}$) with minimal cross-talk and uniform gain response before Class-D power amplification.
 * **Analysis:** AC, transient, and operating-point DC sweep simulations; physical circuit verification on breadboard.
 * **Video Demonstration:** [Experiment 5: Adder Circuit](https://youtube.com/@arpit_iit.madras?si=c5lhNswLiiwFaNUQ)
+
+---
+
+### [Experiment 6: Top-Level System Integration](LAB_MANUAL.md#experiment-6-top-level-integration)
+* **Objective:** Combine all five functional subsystems (Ramp Generator, Differential Modulator, H-Bridge Driver, Bandpass Filters, Adder) into a fully integrated analog audio / electronic stethoscope system driving a physical speaker load.
+* **Grounding & Noise Isolation:** Implemented star-grounding topology for $V_{DD}$ and GND ($V_{SS}$) to prevent switching noise from the Class-D stage from polluting the high-gain analog filters.
 
 ---
 
@@ -116,7 +139,7 @@ Located in the [`Design-Projects_Amplifiers/`](Design-Projects_Amplifiers/) dire
 | **Measurement Software**| ALICE Desktop, Pixelpulse |
 | **Active ICs** | MCP6004 (Quad Rail-to-Rail Op-Amp), LM339 (Quad Comparator), LTC6090, LTC6268 |
 | **Discrete Semis** | 2N2222 (NPN), 2N2907 (PNP) |
-| **Documentation** | LaTeX, Microsoft Word, PDF Reports |
+| **Documentation** | LaTeX, Microsoft Word, PDF Reports, Official Question Manual |
 
 ---
 
